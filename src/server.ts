@@ -21,6 +21,6 @@ app.get("/health", (_request, reply) => {
   return reply.status(200).send({ message: "ok" });
 });
 
-app.listen({ port: env.PORT }).then((response) => {
+app.listen({ port: env.PORT, host: "0.0.0.0" }).then((response) => {
   console.log("HTTP Running: ", response);
 });
