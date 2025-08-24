@@ -4,8 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
-    "start:dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts"
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "build": "tsup-node src/server.ts --format esm --out-dir dist",
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "description": "",
   "dependencies": {
     "@fastify/cors": "^11.1.0",
+    "dotenv": "^17.2.1",
     "fastify": "^5.5.0",
     "fastify-type-provider-zod": "^5.0.3",
     "zod": "^4.1.1"
@@ -28,6 +30,9 @@
   "devDependencies": {
     "@types/node": "^24.3.0",
     "@vercel/node": "^5.3.13",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
 }
