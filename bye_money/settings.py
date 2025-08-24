@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'True'))
 
 ALLOWED_HOSTS = ["*"] if DEBUG else os.getenv("ALLOWED_HOSTS").split(",")
-CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
 
 
 # Application definition
